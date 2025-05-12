@@ -44,6 +44,7 @@ public class HeightOfTheBinaryTree {
         System.out.println();
         //System.out.println("Test1");
         //System.out.println("Test2");
+        //System.out.println("Test3");
         System.out.println("Height of the Binary tree is: " + FindHeight(root1));
     }
 
