@@ -3,15 +3,15 @@ package DFS;
 import java.util.*;
 
 public class BinaryTree {
-    static void levelOrderTraversal(TreeNode root){
+    public static void levelOrderTraversal(Node root){
         if(root == null){
             return;
         }
-        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<Node> queue = new LinkedList<>();
         queue.add(root);
 
         while(!queue.isEmpty()){
-            TreeNode temp = queue.poll();
+            Node temp = queue.poll();
             System.out.print(temp.data+" ");
 
             if(temp.left!=null){
@@ -24,21 +24,21 @@ public class BinaryTree {
     }
 
     public static void main(String[] args) {
-        TreeNode root1 = new TreeNode(1);
+        Node root1 = new Node(1);
 
         //level 1
-        root1.left = new TreeNode(2);
-        root1.right = new TreeNode(3);
+        root1.left = new Node(2);
+        root1.right = new Node(3);
 
         //level 2
-        root1.left.left = new TreeNode(4);
-        root1.left.right = new TreeNode(5);
-        root1.right.left = new TreeNode(6);
-        root1.right.right = new TreeNode(7);
+        root1.left.left = new Node(4);
+        root1.left.right = new Node(5);
+        root1.right.left = new Node(6);
+        root1.right.right = new Node(7);
 
         //level 3
-        root1.left.right.left = new TreeNode(9);
-        root1.right.right.left = new TreeNode(15);
+        root1.left.right.left = new Node(9);
+        root1.right.right.left = new Node(15);
 
         levelOrderTraversal(root1);
     }

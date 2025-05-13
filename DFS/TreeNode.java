@@ -5,16 +5,9 @@ import com.sun.source.tree.Tree;
 import java.util.*;
 
 public class TreeNode {
-    int data;
 
-    TreeNode left;
-    TreeNode right;
 
-    TreeNode(int data){
-        this.data = data;
-        this.right = this.left = null;
-    }
-    public static void preOrder(TreeNode root){ //DLR
+    public static void preOrder(Node root){ //DLR
         if (root != null){
             System.out.print(root.data + " ");
             preOrder(root.left);
@@ -22,15 +15,15 @@ public class TreeNode {
         }
     }
 
-    public static void inOrder(TreeNode root){ //LDR
+    public static void inOrder(Node root){ //LDR
         if (root != null) {
             inOrder(root.left);
-            System.out.print(root.data + " ");
+            System.out.print((int)root.data + " ");
             inOrder(root.right);
         }
     }
 
-    public static void postOrder(TreeNode root){ //LRD
+    public static void postOrder(Node root){ //LRD
         if (root != null) {
             postOrder(root.left);
             postOrder(root.right);
@@ -40,21 +33,21 @@ public class TreeNode {
 
 
     public static void main(String[] args) {
-        TreeNode root1 = new TreeNode(1);
+        Node root1 = new Node(1);
 
         //level 1
-        root1.left = new TreeNode(2);
-        root1.right = new TreeNode(3);
+        root1.left = new Node(2);
+        root1.right = new Node(3);
 
         //level 2
-        root1.left.left = new TreeNode(4);
-        root1.left.right = new TreeNode(5);
-        root1.right.left = new TreeNode(6);
-        root1.right.right = new TreeNode(7);
+        root1.left.left = new Node(4);
+        root1.left.right = new Node(5);
+        root1.right.left = new Node(6);
+        root1.right.right = new Node(7);
 
         //level 3
-        root1.left.right.left = new TreeNode(9);
-        root1.right.right.left = new TreeNode(15);
+        root1.left.right.left = new Node(9);
+        root1.right.right.left = new Node(15);
 
         System.out.print("In order: ");
         preOrder(root1);

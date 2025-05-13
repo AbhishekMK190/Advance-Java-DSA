@@ -2,14 +2,14 @@ package DFS;
 
 import com.sun.source.tree.Tree;
 
-import java.sql.SQLOutput;
+import java.util.*;
 
 class Node{
-    int data;
+    double data;
     Node left;
     Node right;
 
-    Node(int x){
+    Node(double x){
         data = x;
         left = right = null;
     }
